@@ -44,6 +44,9 @@ public class BaseActor extends Group {
     //
     private static Rectangle worldBounds;
 
+    //
+
+
     public BaseActor(float x, float y, Stage s) {
         super();
         setPosition(x, y);
@@ -64,6 +67,8 @@ public class BaseActor extends Group {
         // инициализация переменных для максимальной скорости и ускорения
         maxSpeed = 1000;
         deceleration = 0;
+
+        //
 
     }
 
@@ -394,5 +399,8 @@ public class BaseActor extends Group {
         if (getY() > worldBounds.height)
             setY( -getHeight() );
     }
+
+    //
+
 
 }
