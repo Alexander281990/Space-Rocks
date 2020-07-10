@@ -2,7 +2,6 @@ package com.space.alex.ivan.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.space.alex.ivan.MyGdxGame;
 import com.space.alex.ivan.SpaceGame;
 
 public class DesktopLauncher {
