@@ -65,4 +65,16 @@ public class Spaceship extends BaseActor {
         Warp warp2 = new Warp(0,0, this.getStage());
         warp2.centerAtActor(this);
     }
+
+    // метод, с помощью которого корабль стреляет лазерами
+    public void shoot()
+    {
+        if ( getStage() == null)
+            return;
+
+        Laser laser = new Laser(0,0, this.getStage());
+        laser.centerAtActor(this);
+        laser.setRotation( this.getRotation() );
+        laser.setMotionAngle( this.getRotation() );
+    }
 }
