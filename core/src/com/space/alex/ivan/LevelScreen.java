@@ -6,9 +6,12 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 public class LevelScreen extends BaseScreen {
 
     private Spaceship spaceship;
+    private boolean gameOver;
 
     @Override
     public void initialize() {
+        gameOver = false;
+
         BaseActor space = new BaseActor(0, 0, mainStage);
         space.loadTexture("space.png");
         space.setSize(800, 600);
@@ -39,6 +42,12 @@ public class LevelScreen extends BaseScreen {
                     spaceship.remove();
                     spaceship.setPosition(-1000,-1000);
 
+                    BaseActor messageLose = new BaseActor(0,0, uiStage);
+                    messageLose.loadTexture("message-lose.png");
+                    messageLose.centerAtPosition(400,300);
+                    messageLose.setOpacity(0);
+                    messageLose.addAction( Actions.fadeIn(1) );
+                    gameOver = true;
                 }
                 else
                 {
@@ -60,6 +69,15 @@ public class LevelScreen extends BaseScreen {
                     rockActor.remove();
                 }
             }
+        }
+        if ( !gameOver && BaseActor.count(mainStage, "com.space.alex.ivan.Rock") == 0 )
+        {
+            BaseActor messageWin = new BaseActor(0,0, uiStage);
+            messageWin.loadTexture("message-win.png");
+            messageWin.centerAtPosition(400,300);
+            messageWin.setOpacity(0);
+            messageWin.addAction( Actions.fadeIn(1) );
+            gameOver = true;
         }
     }
 
