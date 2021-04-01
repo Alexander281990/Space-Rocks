@@ -6,4 +6,8 @@ public class AddingAds extends BaseActor {
     public AddingAds(float x, float y, Stage s) {
         super(x, y, s);
     }
+
+    public void showAds() {
+        int i = 8;
+    }
 }
